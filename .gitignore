@@ -1,0 +1,16 @@
+/target
+.DS_Store
+node_modules
+.env
+.localenv
+.vscode
+build
+.ssh
+backup/*
+!backup/.gitkeep
+certbot
+venv
+__pycache__
+**/test_data/*
+!**/test_data/.gitkeep
+client/package-lock.json

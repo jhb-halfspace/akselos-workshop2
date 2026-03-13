@@ -1,0 +1,58 @@
+CUSTOMER,MARKET SEGMENT,ASSET TYPE,PROJECT,REF CODE,DEPARTMENT,ACTIVITIES
+Anheuser-Busch InBev NV,Industrials,Pressure Vessel,ABInBev-Mash-cooker-coils,,Production,Digitization Services
+Axpo,Renewables,Hydro,AXPO,,Production,Digitization Services
+Shell,Upstream,FPSO,Bonga-Mitigation,,Production,Digitization Services
+Shell,Upstream,FPSO,BongaLE,,Production,Digitization Services
+Shell,Downstream,Tanks,BufferTankRoof,,Production,Digitization Services
+Oktedi Mining Limited,Mining,Cranes,CV43,,Production,Digitization Services
+Shell,Downstream ,Deaerator ,Deaerator,,Production,Digitization Services
+DHI,Industrials,Pump,DHI-RCP,,Production,Digitization Services
+Pan American Energy,Downstream,Coker,DKU-Coker-Drum,,Production,Digitization Services
+ORCA Korea,Renewables,Solar - Floating,FloatingSolar,,Production,Digitization Services
+Factory Mutual Insurance Company,Mining,Cranes,FMGlobal-Crane,,Production,Digitization Services
+GE Global Research,Renewables,Wind - Floating,GE-Wind,,Production,Digitization Services
+Worley Services Pty Ltd.,Renewables,Wind - Floating,Hexicon,,Production,Digitization Services
+Hokchi Energy S.A. de C.V,Upstream,Jacket,Hokchi,,Production,Digitization Services
+Shell + Lamprell,Renewables,Wind - Fixed Structure,JIP,,Production,Digitization Services
+Shell,Upstream,TLP,MarsTLP,,Production,Digitization Services
+LLoyds Register [GP],Upstream,FPSO,Nastran-FPSO,,Production,Digitization Services
+,Renewable ,Wind - Floating,PPI,,Production,Digitization Services
+Shell,Downstream,SMR,QatarSMR,,Production,Digitization Services
+Rio Tinto,Mining,Stacker,RTIO-Reclaimer,,Production,Digitization Services
+Shell,Downstream ,Reactor,Scotford,,Production,Digitization Services
+Shell,Renewables,Wind Narcelle,TetraSpar,,Production,Digitization Services
+Shell,Downstream ,ASU ,WGAN-distributor,,Production,Digitization Services
+Shell,Renewables,Wind - Floating,workFLOWT,,Production,Digitization Services
+Santos WA Energy Limited,Upstream,FPSO,Santos-Ningaloo,,Production,Digitization Services
+Shell,Downstream,Pump,HTF-2P7604,,Production,Digitization Services
+CEPSA,Downstream,Reactor,CEPSA-Reactor,,Production,Digitization Services
+ADNOC,Downstream,Compressor-Rotor,ADNOC-Compressor-Rotor,,Production,Digitization Services
+Shell,Downstream,HRSG ,HRSG,,Production,Digitization Services
+Pan American Energy,Downstream ,Superheater-Tubes,PAE-Superheater-Tubes,,Production,Digitization Services
+Cosmi S.p.A.,Downstream,ORV,COSMI-ORV,,Production,Digitization Services
+Lamprell Energy Limited
+,Renewables,Wind - Fixed,Lamprell-support,,Production,Post Sales Support
+Akselos,,,Pre-Sales,,Showcase,Pre-Sales Support
+Pusan National University,,,Pusan-Support,,Training & Support,Post Sales Support
+Yenem,,,YENEM-Support,,Training & Support,Post Sales Support
+TUBraunschweig,,,TUBraunschweig,,Training & Support,Post Sales Support
+Akselos,Upstream,Jacket/Platform,Codecheck,,Development,Software Development
+Akselos,,,dev-project,,Development,Software Development
+Akselos,,,HUIDev,,Development,Software Development
+Akselos,,,PLG,,Development,Software Development
+Akselos,,,Product-Testing,,Training & Support,Software Development
+Akselos,,,User-Manual,,Training & Support,Software Development
+Akselos,,,General,,Development,Software Development
+Akselos,,,GUI-Feb-Release,,Training & Support,Software Development
+Akselos,,,HUI-Feb-Release,,Training & Support,Software Development
+Shell,Renewables,Wind - Floating,FOWT,,Production,Software Development
+Akselos,,,Internal-Training,,Training & Support,Training
+Shell,Renewables,Wind - Floating,Shell-Tetraspar-Training,,Training & Support,Training
+Shell,Upstream,FPSO,SNEPCO-Training,,Training & Support,Training
+Akselos,,,Training-Development,,Training & Support,Training
+Akselos,,,Training-Migration,,Training & Support,Training
+Worley Europe Limited,Renewables,Wind - Floating,Worley-Advanced-Training,,Training & Support,Training
+Shell,Downstream,Reactor,Scotford-Support,,Training & Support,Training
+Akselos,,,SNU-Training,,Training & Support,Training
+Shell,,,Shell-India-Training,,Training & Support,Training
+TNO,,,TNO,,Training & Support,Training

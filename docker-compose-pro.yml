@@ -1,0 +1,133 @@
+version: "3.9"
+services:
+  time-recorder-db:
+    container_name: time-recorder-db
+    image: postgres:latest
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5433:5432
+    healthcheck:
+      test: psql -U $$POSTGRES_USER -q -d $$POSTGRES_DB -c "SELECT 'ready';"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    env_file:
+      - .env
+    networks:
+      - tr_network
+
+  time-recorder-server:
+    container_name: time-recorder-server
+    restart: always
+    image: time-recorder-server:latest
+    depends_on:
+      - time-recorder-db
+    env_file:
+      - .env
+    ports:
+      - "$PORT:$PORT"
+    networks:
+      - tr_network
+
+  time-recorder-nginx:
+    container_name: time-recorder-nginx
+    restart: always
+    depends_on:
+      - time-recorder-server
+    image: time-recorder-nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/nginx-https.conf:/etc/nginx/nginx.conf
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    networks:
+      - tr_network
+
+  time-recorder-certbot:
+    container_name: time-recorder-certbot
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx-http.conf:/etc/nginx/nginx.conf
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    depends_on:
+      - time-recorder-certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email server-monitoring@akselos.com -d tr.akselos.com --agree-tos
+
+  time-recorder-pgadmin4:
+    container_name: time-recorder-pgadmin4
+    image: dpage/pgadmin4
+    ports:
+      - "8989:80"
+    env_file:
+      - .env
+    networks:
+      - tr_network
+
+  time-recorder-django:
+    container_name: time-recorder-django
+    build:
+      dockerfile: ./django/Dockerfile
+      context: .
+    depends_on:
+      - time-recorder-db
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./django:/app
+    ports:
+      - "8080:8000"
+    env_file:
+      - .env
+    networks:
+      - tr_network
+
+  time-recorder-send-reminder:
+    container_name: time-recorder-send-reminder
+    build:
+      dockerfile: Dockerfile
+      context: ./scripts
+    command:
+      - python
+      - send_reminder.py
+    depends_on:
+      - time-recorder-db
+    env_file:
+      - .env
+    networks:
+      - tr_network
+
+  time-recorder-send-report:
+    container_name: time-recorder-send-report
+    build:
+      dockerfile: Dockerfile
+      context: ./scripts
+    command:
+      - python
+      - send_report.py
+    depends_on:
+      - time-recorder-db
+    env_file:
+      - .env
+    networks:
+      - tr_network
+
+networks:
+  tr_network:
+    driver: bridge
+
+volumes:
+  db-data:

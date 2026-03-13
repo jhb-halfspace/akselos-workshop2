@@ -1,0 +1,57 @@
+id,project_name,ref_code,department_id,activity
+1,ABInBev-Mash-cooker-coils,,2,Digitization Services
+2,AXPO,,2,Digitization Services
+3,Bonga-Mitigation,,2,Digitization Services
+4,BongaLE,,2,Digitization Services
+5,BufferTankRoof,,2,Digitization Services
+6,CV43,,2,Digitization Services
+7,Deaerator,,2,Digitization Services
+8,DHI-RCP,,2,Digitization Services
+9,DKU-Coker-Drum,,2,Digitization Services
+10,FloatingSolar,,2,Digitization Services
+11,FMGlobal-Crane,,2,Digitization Services
+12,GE-Wind,,2,Digitization Services
+13,Hexicon,,2,Digitization Services
+14,Hokchi,,2,Digitization Services
+15,JIP,,2,Digitization Services
+16,MarsTLP,,2,Digitization Services
+17,Nastran-FPSO,,2,Digitization Services
+18,PPI,,2,Digitization Services
+19,QatarSMR,,2,Digitization Services
+20,RTIO-Reclaimer,,2,Digitization Services
+21,Scotford,,2,Digitization Services
+22,TetraSpar,,2,Digitization Services
+23,WGAN-distributor,,2,Digitization Services
+24,workFLOWT,,2,Digitization Services
+25,Santos-Ningaloo,,2,Digitization Services
+26,HTF-2P7604,,2,Digitization Services
+27,CEPSA-Reactor,,2,Digitization Services
+28,ADNOC-Compressor-Rotor,,2,Digitization Services
+29,HRSG,,2,Digitization Services
+30,PAE-Superheater-Tubes,,2,Digitization Services
+31,COSMI-ORV,,2,Digitization Services
+33,Lamprell-support,,2,Post Sales Support
+34,Pre-Sales,,1,Pre-Sales Support
+35,Pusan-Support,,5,Post Sales Support
+36,YENEM-Support,,5,Post Sales Support
+37,TUBraunschweig,,5,Post Sales Support
+38,Codecheck,,6,Software Development
+39,dev-project,,6,Software Development
+40,HUIDev,,6,Software Development
+41,PLG,,6,Software Development
+42,Product-Testing,,5,Software Development
+43,User-Manual,,5,Software Development
+44,General,,6,Software Development
+45,GUI-Feb-Release,,5,Software Development
+46,HUI-Feb-Release,,5,Software Development
+47,FOWT,,2,Software Development
+48,Internal-Training,,5,Training
+49,Shell-Tetraspar-Training,,5,Training
+50,SNEPCO-Training,,5,Training
+51,Training-Development,,5,Training
+52,Training-Migration,,5,Training
+53,Worley-Advanced-Training,,5,Training
+54,Scotford-Support,,5,Training
+55,SNU-Training,,5,Training
+56,Shell-India-Training,,5,Training
+57,TNO,,5,Training

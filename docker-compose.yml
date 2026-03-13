@@ -1,0 +1,91 @@
+services:
+  time-recorder-db:
+    image: postgres:17
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5433:5432
+    healthcheck:
+      test: psql -U $$POSTGRES_USER -q -d $$POSTGRES_DB -c "SELECT 'ready';"
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    env_file:
+      - .env
+    networks:
+      - tr_network
+
+  time-recorder-server:
+    restart: always
+    build:
+      dockerfile: ./django/Dockerfile
+      context: .
+    depends_on:
+      - time-recorder-db
+    command: uv run python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./django:/app
+      - ./django/static:/app/static
+    ports:
+      - "$PORT:8000"
+    env_file:
+      - .env
+    networks:
+      - tr_network
+
+  time-recorder-nginx:
+    restart: always
+    depends_on:
+      - time-recorder-server
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    image: time-recorder-nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx/nginx-http.conf:/etc/nginx/nginx.conf
+      - ./django/static:/app/static
+    networks:
+      - tr_network
+
+  time-recorder-send-reminder:
+    build:
+      dockerfile: Dockerfile
+      context: ./scripts
+    command:
+      - uv
+      - run
+      - python
+      - send_reminder.py
+    depends_on:
+      - time-recorder-db
+    env_file:
+      - .env
+    networks:
+      - tr_network
+
+  time-recorder-send-report:
+    build:
+      dockerfile: Dockerfile
+      context: ./scripts
+    command:
+      - uv
+      - run
+      - python
+      - send_report.py
+    depends_on:
+      - time-recorder-db
+    env_file:
+      - .env
+    networks:
+      - tr_network
+
+networks:
+  tr_network:
+    driver: bridge
+
+volumes:
+  db-data:
