@@ -1,4 +1,4 @@
-# Akselos Time Recorder
+# Akselos Time Recorder - for halfspace workshop
 
 This repository contains the Akselos Time Recorder application, including the Django backend, Next.js frontend, and various automation scripts.
 
